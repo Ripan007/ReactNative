@@ -1,11 +1,11 @@
-import { Text, View } from 'react-native'
+import React from 'react'
+import { View } from 'react-native'
+import { LittleLemonHeader } from './components/LittleLemonHeader'
 
 function App() {
   return (
-    <View>
-      <Text style={{ color: 'orange' }}>
-        welcome to react native ,have all the fun
-      </Text>
+    <View style={{ backgroundColor: '#0E6655', flex: 1 }}>
+      <LittleLemonHeader />
     </View>
   )
 }
