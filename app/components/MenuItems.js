@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { ScrollView } from 'react-native'
 
 const menuItemsToDisplay = [
@@ -7,16 +7,11 @@ const menuItemsToDisplay = [
 
 const MenuItems = () => {
   return (
-    <View style={{ flex: 0.8 }}>
-      <ScrollView
-        indicatorStyle={'white'}
-        style={{
-          paddingHorizontal: 40,
-          paddingVertical: 40,
-          backgroundColor: 'black',
-        }}
-      >
-        <Text style={{ color: 'white', fontSize: 40 }}>view menu</Text>
+    <View style={menuStyles.container}>
+      <ScrollView indicatorStyle={'white'} style={menuStyles.innerContainer}>
+        <Text style={{ color: 'white', fontSize: 40, flexWrap: 'wrap' }}>
+          view menu
+        </Text>
         <Text style={{ color: '#F4CE14', fontSize: 36 }}>
           {menuItemsToDisplay[0]}
         </Text>
@@ -24,5 +19,16 @@ const MenuItems = () => {
     </View>
   )
 }
+
+const menuStyles = StyleSheet.create({
+  container: {
+    flex: 0.5,
+  },
+  innerContainer: {
+    paddingHorizontal: 40,
+    paddingVertical: 40,
+    backgroundColor: 'red',
+  },
+})
 
 export default MenuItems
