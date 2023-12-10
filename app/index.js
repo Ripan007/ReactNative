@@ -1,13 +1,26 @@
-import React from 'react'
 import { View } from 'react-native'
-import { LittleLemonHeader } from './components/LittleLemonHeader'
+import LittleLemonHeader from './components/LittleLemonHeader'
 
-function App() {
+import MenuItems from './components/MenuItems'
+import LittleLemonFooter from './components/LittleLemonFooter'
+import WelcomeScreen from './components/WelcomeScreen'
+
+export default function App() {
   return (
-    <View style={{ backgroundColor: '#0E6655', flex: 1 }}>
-      <LittleLemonHeader />
-    </View>
+    <>
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: '#495E57',
+        }}
+      >
+        <LittleLemonHeader />
+        {/* <MenuItems /> */}
+        <WelcomeScreen />
+      </View>
+      <View style={{ backgroundColor: '#495E57' }}>
+        <LittleLemonFooter />
+      </View>
+    </>
   )
 }
-
-export default App

@@ -1,28 +1,21 @@
 import { Text, View } from 'react-native'
 
-export const LittleLemonHeader = () => {
+export default function LittleLemonHeader() {
   return (
     <View
-      style={{
-        backgroundColor: '#EEEA08',
-        flex: 0.2,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
+      style={{ flex: 0.1, backgroundColor: 'yellow', justifyContent: 'center' }}
     >
       <Text
         style={{
           fontSize: 30,
-          textTransform: 'capitalize',
+          color: 'black',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          color: 'black',
         }}
       >
-        welcome to{' '}
-        <Text style={{ fontWeight: 'bold', color: '#E00CE7' }}>
-          little lemon
-        </Text>{' '}
+        Little Lemon
       </Text>
     </View>
   )
 }
-
-// number of line
