@@ -1,6 +1,5 @@
 import { View } from 'react-native'
-
-import TaskSectionlist from './components/TaskSectionlist'
+import FeedbackFormP from './FeedbackFormP'
 
 export default function App() {
   return (
@@ -12,7 +11,7 @@ export default function App() {
         }}
       >
         {/* <LittleLemonHeaders /> */}
-        <TaskSectionlist />
+        <FeedbackFormP />
       </View>
 
       {/* <View><LittleLemonFooter /></View> */}
