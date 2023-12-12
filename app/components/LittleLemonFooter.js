@@ -18,6 +18,7 @@ const footerStyle = StyleSheet.create({
     justifyContent: 'flex-end',
     paddingBottom: 10,
   },
+
   innerText: {
     fontSize: 18,
     textAlign: 'center',
