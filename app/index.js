@@ -1,20 +1,34 @@
-import { View } from 'react-native'
-import FeedbackFormP from './FeedbackFormP'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import Welcome from './components/Navigation/Welcome'
+import MenuScreen from './components/Navigation/MenuScreen'
+const Stack = createNativeStackNavigator()
 
-export default function App() {
+const App = () => {
   return (
-    <>
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: '#495E57',
+    <NavigationContainer independent={true}>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: { backgroundColor: 'lightblue' },
         }}
+        initialRouteName='Welcome'
       >
-        {/* <LittleLemonHeaders /> */}
-        <FeedbackFormP />
-      </View>
-
-      {/* <View><LittleLemonFooter /></View> */}
-    </>
+        <Stack.Screen
+          options={{ title: 'Home' }}
+          name='Welcome'
+          component={Welcome}
+        />
+        <Stack.Screen name='menu' component={MenuScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
+
+export default App
+// <ImageBackground
+
+//   resizeMode='stretch'
+//   style={{ flex: 1, justifyContent: 'center' }}
+//   source={require('./components/img/nun.jpg')}
+//
+//   <ImageRender />

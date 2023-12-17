@@ -11,7 +11,7 @@ export default function FeedbackFormP() {
         style={formCustom.headerText}
         value={firstName}
         onChangeText={onChangeFirstName}
-        placeholder='enter firt name'
+        placeholder='enter name'
       />
     </ScrollView>
   )
