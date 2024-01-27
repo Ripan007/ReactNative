@@ -1,44 +1,71 @@
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { useState } from 'react'
+import { View, StyleSheet, FlatList, Button } from 'react-native'
+import GoalItem from './components/GoalItem'
+import GoalInput from './components/GoalInput'
 
 export default function App() {
+  const [modalIsVisible, setModalIsVisible] = useState(false)
+  const [courseGoal, setCourseGoal] = useState([])
+
+  function startAddGoalHandler() {
+    setModalIsVisible(true)
+  }
+
+  function endAddGoalHandler() {
+    setModalIsVisible(false)
+  }
+  function addGoalHandler(enteredGoalText) {
+    setCourseGoal((currCourseGoal) => [
+      ...currCourseGoal,
+      { text: enteredGoalText, id: Math.random().toString() },
+    ])
+    endAddGoalHandler()
+  }
+
+  function deleteGoalHandler(id) {
+    setCourseGoal((currCourseGoal) => {
+      return currCourseGoal.filter((goal) => goal.id !== id)
+    })
+  }
   return (
-    <View style={styles.container}>
-      <View style={styles.innerConRed}></View>
-      <View style={styles.innerConBlue}></View>
-      <View style={styles.innerConYellow}></View>
+    <View style={styles.appContainer}>
+      <Button title='add new goal' onPress={startAddGoalHandler} />
+      <GoalInput
+        onAddGoal={addGoalHandler}
+        visible={modalIsVisible}
+        onCancel={endAddGoalHandler}
+      />
+      <View style={styles.renderGoal}>
+        <FlatList
+          data={courseGoal}
+          keyExtractor={(item, index) => {
+            return item.id
+          }}
+          renderItem={(itemData) => {
+            return (
+              <GoalItem
+                text={itemData.item.text}
+                onDeleteItem={deleteGoalHandler}
+                id={itemData.item.id}
+              />
+            )
+          }}
+          alwaysBounceVertical={false}
+        />
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
+  appContainer: {
     flex: 1,
-    backgroundColor: 'lightblue',
-    padding: 20,
-    justifyContent: 'space-between',
+    paddingVertical: 50,
+    paddingHorizontal: 20,
+    // backgroundColor: '#efecec',
   },
-  innerConBlue: {
-    backgroundColor: 'red',
-    flex: 0.3,
-    borderWidth: 5,
-    borderTopRightRadius: 20,
-    borderTopLeftRadius: 20,
-  },
-  innerConRed: {
-    backgroundColor: 'blue',
-    flex: 0.3,
-    borderWidth: 5,
-  },
-  innerConYellow: {
-    backgroundColor: 'yellow',
-    flex: 0.3,
-    borderWidth: 5,
-    borderTopRightRadius: 20,
-    borderTopLeftRadius: 20,
+
+  renderGoal: {
+    paddingTop: 10,
   },
 })
-
-//  i have to draw those structure on paper and then  i have to code those things  down while coding
-
-
-//  flex box is imortant
