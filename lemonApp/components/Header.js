@@ -11,15 +11,18 @@ function Header() {
 export default Header
 const styles = StyleSheet.create({
   headerMain: {
-    flex: 0.2,
-    justifyContent: 'center',
-    backgroundColor: '#000',
-    alignItems: 'center',
+    // flex: 0.1,
+    // justifyContent: 'center',
+    // backgroundColor: '#000',
+    // alignItems: 'flex-start',
   },
   headerText: {
-    color: '#fff',
-    padding: 30,
-    fontSize: 30,
-    textTransform: 'uppercase',
+    color: '#000',
+    // paddingVertical: 30,
+    // paddingHorizontal: 10,
+    fontSize: 23,
+      textTransform: 'uppercase',
+    fontWeight:'bold'
   },
 })
+

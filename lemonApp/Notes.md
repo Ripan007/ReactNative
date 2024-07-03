@@ -52,4 +52,7 @@ benefits of react native ?
    react native components ?
    react components:react native components({1.community components ,2.core components,3.your native components})
    components: basic building blocks
-   split ui :  independent reusable  pieces
+   split ui : independent reusable pieces
+   view => basic building block of user interface => styling ,flexbox , touch handling ,accessibility controls
+   text:styling ,nesting , touch handling
+   scrollView : must be bounded by height
