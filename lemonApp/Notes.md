@@ -56,3 +56,9 @@ benefits of react native ?
    view => basic building block of user interface => styling ,flexbox , touch handling ,accessibility controls
    text:styling ,nesting , touch handling
    scrollView : must be bounded by height
+stylesheet api:
+extract styles from the  component's render ,keeping all the style together
+rendering large lists using flatlist component:
+scrollable list
+slow renderding
+renders items lazily ,ideal for large lists => rendering as the items appears
