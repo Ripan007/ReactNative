@@ -62,3 +62,9 @@ rendering large lists using flatlist component:
 scrollable list
 slow renderding
 renders items lazily ,ideal for large lists => rendering as the items appears
+upgrade the expo sdk:
+npm install expo@latest
+npm install expo@51
+upgrade dependencies :
+npx expo install --fix
+rendering large lists by sections using sectionList

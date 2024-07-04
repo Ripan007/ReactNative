@@ -1,22 +1,41 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 import Header from './components/Header'
-import { StatusBar } from 'expo-status-bar'
-import MainContent from './components/MainContent'
+import Main from './components/Main'
+import Footer from './components/Footer'
 
-function App() {
+const App = () => {
     return (
         <View style={styles.rootScreen}>
-            <StatusBar style="auto" />
-            <Header />
+            <View style={styles.headerLayout}>
+                <Header />
+            </View>
+            <View style={styles.mainLayout}>
+                <Main />
+            </View>
 
-            <MainContent />
         </View>
     )
 }
+
 export default App
+
 const styles = StyleSheet.create({
     rootScreen: {
         flex: 1,
-        backgroundColor: 'black',
     },
+    headerLayout: {
+        flex: 0.1,
+        backgroundColor: '#FFD3B6',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'flex-end',
+    },
+    mainLayout: {
+        flex: 0.9,
+        backgroundColor: '#405D72',
+
+        paddingVertical: 20,
+    },
+
 })
