@@ -68,3 +68,10 @@ npm install expo@51
 upgrade dependencies :
 npx expo install --fix
 rendering large lists by sections using sectionList
+textinput component : build in react native component for inputting text
+auto correction placeholder text keyboard types  auto capitallization
+keyboarddismissmode : dismisses virtual keyboard when user scroll
+keyboardavoidingview: automatically adjust height ,position ,padding  to avoid conflict with  other  views
+presssable: button clicks ,  user interaction , inputting text
+hitDirect: define pressable range of  an element
+image component : react native core component for  displaying images
