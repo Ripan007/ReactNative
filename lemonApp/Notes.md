@@ -56,22 +56,49 @@ benefits of react native ?
    view => basic building block of user interface => styling ,flexbox , touch handling ,accessibility controls
    text:styling ,nesting , touch handling
    scrollView : must be bounded by height
-stylesheet api:
-extract styles from the  component's render ,keeping all the style together
-rendering large lists using flatlist component:
-scrollable list
-slow renderding
-renders items lazily ,ideal for large lists => rendering as the items appears
-upgrade the expo sdk:
-npm install expo@latest
-npm install expo@51
-upgrade dependencies :
-npx expo install --fix
-rendering large lists by sections using sectionList
-textinput component : build in react native component for inputting text
-auto correction placeholder text keyboard types  auto capitallization
-keyboarddismissmode : dismisses virtual keyboard when user scroll
-keyboardavoidingview: automatically adjust height ,position ,padding  to avoid conflict with  other  views
-presssable: button clicks ,  user interaction , inputting text
-hitDirect: define pressable range of  an element
-image component : react native core component for  displaying images
+   stylesheet api:
+   extract styles from the component's render ,keeping all the style together
+   rendering large lists using flatlist component:
+   scrollable list
+   slow renderding
+   renders items lazily ,ideal for large lists => rendering as the items appears
+   upgrade the expo sdk:
+   npm install expo@latest
+   npm install expo@51
+   upgrade dependencies :
+   npx expo install --fix
+   rendering large lists by sections using sectionList
+   textinput component : build in react native component for inputting text
+   auto correction placeholder text keyboard types auto capitallization
+   keyboarddismissmode : dismisses virtual keyboard when user scroll
+   keyboardavoidingview: automatically adjust height ,position ,padding to avoid conflict with other views
+   presssable: button clicks , user interaction , inputting text
+   hitDirect: define pressable range of an element
+   image component : react native core component for displaying images
+   respources , temporary local local disk network
+   loadingindicatorsource: represants resources used to render the loading indicator
+   setting background image
+   hooks : hooks into react state and lifecycle features from component
+   manage and track state within a component : useState
+   useColorSchemaHook
+   useWindowDimension : useWindowDimensions automatically updates all of its values when screen size or font scale changes
+   react navigation
+   Installation into an Expo-managed project
+   To add React Navigation to a React Native project which uses Expo, follow these instructions:
+
+Install the following dependencies within your project:
+npm install @react-navigation/native
+npx expo install react-native-screens react-native-safe-area-context
+stack navigator : transition between screen with each new one at top of stack
+npm install @react-navigation/stack
+npx expo install react-native-gesture-handler
+navigation props: stack navigator prop passed to every screen component . can customize behaviour with methods
+navigate
+popToTop
+goBack
+push
+tab navigation:
+setting up tab based navigation  between screens
+drawer navigation
+
+
