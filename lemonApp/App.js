@@ -1,67 +1,56 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
-import { Text } from 'react-native'
-import { Ionicons } from '@expo/vector-icons'
-const Tab = createBottomTabNavigator()
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import Welcome from './components/screen/Welcome'
+import Subscribe from './components/screen/Subscribe'
+import { View, Text, Pressable } from 'react-native'
+import { AntDesign } from '@expo/vector-icons'
+const Stack = createNativeStackNavigator()
 
-function Home() {
-    return <Text>home page</Text>
-}
-
-function History() {
-    return <Text>home page</Text>
-}
-
-function Info() {
-    return <Text>home page</Text>
-}
-function Log() {
-    return <Text>home page</Text>
-}
-function Stack() {
-    return <Text>home page</Text>
-}
-function MyStack() {
+function ButtonUi() {
     return (
-        <Tab.Navigator
-            
+        <View style={{flexDirection:'row-reverse',alignItems:'center'}}>
+            <Text style={{color:'blue',fontSize:20,paddingHorizontal:10}}>Welcome</Text>
+            <AntDesign name="back" size={24} color="black" />
+        </View>
+    )
+}
 
-            screenOptions={({ route }) => ({
-                tabBarIcon: ({ focused, color, size }) => {
-                    let iconName
-                    if (route.name === 'Home') {
-                        iconName = focused ? 'home' : 'home-outline'
-                    } else if (route.name === 'History') {
-                        iconName = 'alarm-outline'
-                    } else if (route.name === 'Info') {
-                        iconName = 'alarm-outline'
-                    } else if (route.name === 'Log') {
-                        iconName = 'alarm-outline'
-                    } else if (route.name === 'Stack') {
-                        iconName = 'alarm-outline'
-                    }
-                    return (
-                        <Ionicons name={iconName} color={color} size={size} />
-                    )
-                },
-                tabBarActiveTintColor: 'tomato',
-                tabBarInactiveTintColor:'gray'
-            })}>
-            <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="History" component={History} />
-            <Tab.Screen name="Info" component={Info} />
-            <Tab.Screen name="Log" component={Log} />
-            <Tab.Screen name="Stack" component={Stack} />
-        </Tab.Navigator>
+function Screen() {
+    return (
+        <Stack.Navigator initialRouteName="Welcome">
+            <Stack.Screen
+                options={{
+                    headerTitleAlign: 'center',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    },
+                }}
+                name="Welcome"
+                component={Welcome}
+            />
+            <Stack.Screen
+                options={({ navigation }) => ({
+                    headerLeft: () => (
+                        <Pressable
+                            onPress={() => navigation.navigate('Welcome')}>
+                            <ButtonUi />
+                        </Pressable>
+                    ),
+                    headerTitleAlign: 'center',
+                    headerTitleStyle: { fontWeight: 'bold' },
+                })}
+                name="Subscribe"
+                component={Subscribe}
+            />
+        </Stack.Navigator>
     )
 }
 
 function App() {
     return (
         <NavigationContainer>
-            <MyStack />
+            <Screen />
         </NavigationContainer>
     )
 }
-
 export default App
